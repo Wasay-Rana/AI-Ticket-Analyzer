@@ -68,18 +68,19 @@ Example response:
     "category": "Billing",
     "urgency": "High",
     "toxic": false,
-    "summary": "Amount deducted but purchase not reflected after two card attempts.",
+    "summary": "Duplicate charge detected; customer requests a refund.",
     "confidence": 0.95,
-    "reasoning": "Customer reports a failed transaction, categorized as Billing with high urgency.",
+    "reasoning": "Customer reports a failed/duplicated transaction which impacts billing; marked high urgency.",
     "llm_model": "gpt-4o"
 }
 ```
 
-Fields:
-- toxic: whether the message contains strong language or notable frustration  
-- confidence: model confidence score (0.0–1.0)
+Fields
+- `toxic`: whether the message contains strong language or notable frustration  
+- `confidence`: model confidence score (0.0–1.0)
 
 ## Project structure
+```
 ai-ticket-analyzer/
 ├── llm/
 │   └── client.py        # LLM wrapper (calls OpenAI/Instructor)
@@ -90,3 +91,4 @@ ai-ticket-analyzer/
 ├── .env                 # Environment variables (not committed)
 ├── requirements.txt     # Python dependencies
 └── README.md
+```
