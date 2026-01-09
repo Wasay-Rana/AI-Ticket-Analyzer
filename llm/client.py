@@ -11,6 +11,7 @@ def Analyze_throughLLM(data: CustomerTicket) -> TicketAnalyzer:
     result = client.chat.completions.create(
         model="gpt-4o",
         response_model=TicketAnalyzer,
+        max_retries=3,
         messages=[
             {"role": "system", "content": "You are a senior support ticket analyzer."},
             {"role": "user", "content": f"Analyze this ticket: {data.message}"}
