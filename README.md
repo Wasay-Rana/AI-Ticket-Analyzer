@@ -70,7 +70,6 @@ Example response:
     "toxic": false,
     "summary": "Duplicate charge detected; customer requests a refund.",
     "confidence": 0.95,
-    "reasoning": "Customer reports a failed/duplicated transaction which impacts billing; marked high urgency.",
     "llm_model": "gpt-4o"
 }
 ```
